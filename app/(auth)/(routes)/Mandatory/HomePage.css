@@ -1,0 +1,338 @@
+:root{
+    --text-grey: rgb(141, 141, 141);
+    --background-black: rgb(46, 46, 46);
+}
+
+body {
+    overflow: hidden;
+}
+
+.MainPageContainer{
+    height: 100%;
+    width: max-content;
+}
+
+.Discord-Channel{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Left-Banner{
+    width: 72px;
+    height: 100%;
+    background-color: #1d1d1d;
+}
+
+/* Banner icons at the left banner included animation for the icons */
+
+.Channel-icon {
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    position: relative;
+}
+
+.Channel-icon {
+    margin-bottom: 25px;
+}
+
+.Channel-icon:nth-child(1)::after{
+    content: '';
+    width: 33px;
+    height: 2px;
+    background-color: rgb(62, 62, 62);
+    position: absolute;
+    bottom: -15px;
+}
+
+.Channel-Logo {
+    height: 48px;
+    width: 48px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Channel-Logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.whiteLine {
+    position: absolute;
+    border-radius: 100%;
+    left: -15px;
+    width: 7px;
+    height: 7px;
+    background-color: white;
+}
+
+@keyframes MaxSpread {
+    0% {
+        opacity: 1;
+        height: 20px;
+        border-radius: 5px;
+    }
+
+    100% {
+        opacity: 1;
+        height: 40px;
+        border-radius: 5px;
+    }
+}
+
+.NoLine {
+    position: absolute;
+    border-radius: 100%;
+    left: -15px;
+    width: 7px;
+    height: 7px;
+    opacity: 0;
+    background-color: white;
+}
+
+.Channel-Logo:hover .NoLine {
+    animation: WhiteSpread 0.3s ease-in-out forwards;
+}
+
+.Channel-Logo:not(:hover) .NoLine {
+    animation: NoLine 0.3s ease-in-out forwards;
+}
+ 
+.Channel-Logo:hover .whiteLine {
+    animation: WhiteSpread 0.3s ease-in-out forwards;
+}
+
+.Channel-Logo:not(:hover) .whiteLine {
+    animation: WhiteSpreadBack 0.3s ease-in-out forwards;
+}
+
+@keyframes NoLine {
+    0% {
+        opacity: 1;
+        height: 20px;
+        border-radius: 5px;
+    }
+
+    100% {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+    }
+}
+
+@keyframes WhiteSpreadBack {
+    0% {
+        opacity: 1;
+        height: 20px;
+        border-radius: 5px;
+    }
+
+    100% {
+        opacity: 1;
+        width: 7px;
+        height: 7px;
+        border-radius: 100%;
+    }
+}
+
+@keyframes WhiteSpread{
+    100% {
+        opacity: 1;
+        height: 20px;
+        border-radius: 5px;
+    }
+}
+
+.Channel-icon:nth-child(1) .Channel-Logo:hover{
+    animation: Spread 0.2s ease-in-out forwards;
+}
+
+.Channel-icon:nth-child(1) .Channel-Logo:not(:hover){
+    animation: Spreadback 0.2s ease-out forwards;
+}
+
+@keyframes Spreadback {    
+    100% {
+        border-radius: 100%;
+        background-color: rgb(46, 46, 46);
+    }
+}
+
+@keyframes Spread {
+    100% {
+        border-radius: 15px;
+        background-color: #686bff;
+    }
+}
+
+/* Left side banner Notification */
+
+.Home-Notification {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(46, 46, 46);
+}
+
+.Notification-Red {
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background: red;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 8px;
+    font-weight: bolder;
+}
+
+.Channel-Banner {
+    width: 240px;
+    height: 100%;
+    background: rgb(47, 47, 49);
+}
+
+.Filter-Container {
+    height: 48px;
+    border-bottom: 1px solid rgb(25, 25, 25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Filter-Home {
+    background-color: #1d1d1d;
+    width: 90%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(141, 141, 141);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Mandatory-Content {
+    padding: 4px;
+}
+
+.Channel-Contents {
+    font-family: 'Rubik';
+    color: var(--text-grey);
+    width: 224px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.Channel-Contents:hover {
+    background-color: rgb(58, 58, 58);
+    border-radius: 5px;
+    color: rgb(219, 219, 219);
+}
+
+.Channel-Content-Icon {
+    margin: 8px;
+    width: 24px;
+    height: 24px;
+    color: rgb(141, 141, 141);
+}
+
+.PrivateChannel {
+    width: 100%;
+    height: 100%;
+    color: var(--text-grey);
+}
+
+.PrivateChannelHeader {
+    padding-left: 20px;
+    font-size: 12px;
+    position: relative;
+}
+
+.PrivateChannelHeader:hover {
+    color: white;
+}
+
+.AddDM{
+    width: 16px;
+    text-align: end;
+    cursor: pointer;
+}
+
+.AddDM::before{
+    content:'Create DM';
+    font-family: 'Oswald';
+    color: var(--text-grey);
+    background: rgb(20, 20, 20);
+    padding: 8px;
+    position: absolute;
+    height: 20px;
+    border-radius: 10px;
+    top: -40px;
+    right: -5px;
+    opacity: 0;
+}
+
+.AddDM:hover::before {
+    opacity: 1;
+}
+
+.Cross {
+    width: 1px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(219, 219, 219);
+    position: absolute;
+    right: 25px;
+    top: 2px;
+}
+
+.Cross:nth-child(2){
+    rotate: 90deg;
+}
+
+.PrivateChannelContent{
+    padding: 5px;
+}
+
+.User-Image {
+    width: 32px;
+    height: 32px;
+    background: #1d1d1d;
+    border-radius: 100%;
+    margin-left: 10px;
+}
+
+.Username-Private {
+    margin-left: 15px;
+}
+
+.Username-Private p:nth-child(2){
+    margin-top:-20px;
+    font-size: 12px;
+}
+
+.PrivateCancel {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}

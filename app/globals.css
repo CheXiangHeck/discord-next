@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Lemon&family=Oswald&family=Rubik&family=Sixtyfour&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +11,11 @@ body,
 }
  
 @layer base {
+
+  body {
+    @apply font-Oswald;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;

@@ -1,0 +1,78 @@
+.FriendsContainer{
+    background-color: rgb(57,57,57);
+    height: 100%;
+    width: 100%;
+}
+
+.FriendsTop{
+    padding-left: 7px;
+    height: 48px;
+    border-bottom: 1px solid rgb(25, 25, 25);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+}
+
+.FriendsLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.line {
+    margin-left: 15px;
+    width: 1px;
+    background: rgb(85, 85, 85);
+    height: 50%;
+}
+
+.FriendsButton {
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 4px 7px 4px 7px;
+    color: var(--text-grey);
+    cursor: pointer;
+}
+
+.FriendsButtonGroup {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+.FriendsButtonGroup::-webkit-scrollbar{
+    display: none;
+}
+
+.FriendsButton:hover {
+    color: rgb(212, 212, 212);
+    background-color: rgb(74, 74, 74);
+}
+
+.Button-green{
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 4px 7px 4px 7px;
+    background-color: seagreen;
+    color: white;
+    cursor: pointer;
+}
+
+.InfomativeSection {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    background-color: rgb(57,57,57);
+    border-radius: 5px;
+}
+
+.InfomativeSection .Channel-Content-Icon {
+    cursor: pointer;
+}
+
+.InfomativeSection .Channel-Content-Icon:hover {
+    color: rgb(212, 212, 212)
+}
