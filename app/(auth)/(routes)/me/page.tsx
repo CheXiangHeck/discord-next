@@ -57,7 +57,9 @@ export default function Page() {
                 clip-rule="evenodd"
               ></path>
             </svg>
-            <UserButton afterSignOutUrl="/" />
+            <div className="Channel-Content-Icon">
+                <UserButton afterSignOutUrl="/" />
+            </div>
           </div>
         </div>
         <div className="FriendsContent">
