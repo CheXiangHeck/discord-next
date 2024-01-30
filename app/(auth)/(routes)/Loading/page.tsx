@@ -3,15 +3,17 @@
 import React from 'react';
 import './Loading.css';
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useSearchParams, redirect, useRouter } from 'next/navigation';
 
 export default function Page() {
 
+    const data = useSearchParams();
     const router = useRouter();
 
     useEffect(() => {
+        const search = data.get('serverId');
         const timeout = setTimeout(() => {
-            router.push('../me');
+            router.push(`servers/${search}`);
         }, 5000);
 
         return () => clearTimeout(timeout);

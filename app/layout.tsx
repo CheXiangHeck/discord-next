@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import Page from "./(auth)/(routes)/Loading/page";
+import { SignedIn } from "@clerk/nextjs";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -17,8 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={font.className}>{children}</body>
+      <html lang="en" suppressHydrationWarning>
+        <body className={font.className}>
+          <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          storageKey="discord-theme">
+            <ModalProvider />
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );
